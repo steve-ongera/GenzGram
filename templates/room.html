@@ -1,0 +1,646 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <meta name="description" content="Smarthr - Bootstrap Admin Template">
+		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
+        <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Gen | Z</title>
+        <link rel="shortcut icon" type="image/x-icon" href="{%static 'moi/img/logo.png'%}">
+        <link rel="stylesheet" href="{%static 'moi/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{%static 'moi/css/font-awesome.min.css'%}">
+		<link rel="stylesheet" href="{%static 'moi/css/line-awesome.min.css'%}">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="{%static 'moi/css/style.css'%}">
+		
+		
+    </head>
+    <body>
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                <div class="header-left">
+                    <a href="{% url 'chatpagehome'%}" class="logo">
+						<img src="{%static 'moi/img/logo.png'%}" width="40" height="40" alt="">
+					</a>
+                </div>
+				<!-- /Logo -->			
+				
+				<a id="toggle_btn" href="javascript:void(0);">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</a>
+				
+				<!-- Header Title -->
+                <div class="page-title-box">
+					<h3>Genz ! gram</h3>
+                </div>
+				<!-- /Header Title -->
+				
+				<a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
+				
+				<!-- Header Menu -->
+				<ul class="nav user-menu">
+				
+					<!-- Search -->
+					<li class="nav-item">
+						<div class="top-nav-search">
+							<a href="javascript:void(0);" class="responsive-search">
+								<i class="fa fa-search"></i>
+						   </a>
+							<form method="GET" action="{% url 'chatpagehome'%}">
+								<input class="form-control" type="text" name="q" placeholder="Search for group">
+								<button class="btn" type="submit"><i class="fa fa-search"></i></button>
+							</form>
+						</div>
+					</li>
+					<!-- /Search -->
+				
+					<!-- Flag -->
+					<li class="nav-item dropdown has-arrow flag-nav">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+							<img src="{%static 'moi/img/flags/us.png'%}" alt="" height="20"> <span>English</span>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a href="javascript:void(0);" class="dropdown-item">
+								<img src="{%static 'moi/img/flags/us.png'%}" alt="" height="16"> English
+							</a>
+							<a href="javascript:void(0);" class="dropdown-item">
+								<img src="{%static 'moi/img/flags/fr.png'%}" alt="" height="16"> French
+							</a>
+							<a href="javascript:void(0);" class="dropdown-item">
+								<img src="{%static 'moi/img/flags/es.png'%}" alt="" height="16"> Spanish
+							</a>
+							<a href="javascript:void(0);" class="dropdown-item">
+								<img src="{%static 'moi/img/flags/de.png'%}" alt="" height="16"> German
+							</a>
+						</div>
+					</li>
+					<!-- /Flag -->
+				
+					<!-- Notifications -->
+					<li class="nav-item dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+								
+									<!-- i want to include notifications-->
+									{% include 'notification.html' %}
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="activities.html">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+					
+					<!-- Message Notifications -->
+					<li class="nav-item dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fa fa-comment-o"></i> <span class="badge badge-pill">8</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Messages</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+										<a href="#">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">
+														<img alt="" src="{%static 'moi/img/profiles/avatar-09.jpg'%}">
+													</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Richard Miles </span>
+													<span class="message-time">12:28 AM</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">
+														<img alt="" src="{%static 'moi/img/profile.png'%}">
+													</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">John Doe</span>
+													<span class="message-time">6 Mar</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">
+														<img alt="" src="static 'moi/img/profiles/avatar-03.jpg">
+													</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Tarah Shropshire </span>
+													<span class="message-time">5 Mar</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">
+														<img alt="" src="static 'moi/img/profiles/avatar-05.jpg">
+													</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author">Mike Litorus</span>
+													<span class="message-time">3 Mar</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="#">
+											<div class="list-item">
+												<div class="list-left">
+													<span class="avatar">
+														<img alt="" src="static 'moi/img/profiles/avatar-08.jpg">
+													</span>
+												</div>
+												<div class="list-body">
+													<span class="message-author"> Catherine Manseau </span>
+													<span class="message-time">27 Feb</span>
+													<div class="clearfix"></div>
+													<span class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing</span>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="{% url 'chatpagehome'%}">View all Messages</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Message Notifications -->
+	
+					<li class="nav-item dropdown has-arrow main-drop">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img src="{%static 'moi/img/profile.png'%}" alt="">
+							<span class="status online"></span></span>
+							<span>{{request.user.username}} </span>
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="{% url 'update-user'%}">My Profile</a>
+							<a class="dropdown-item" href="{% url 'chatpagehome'%}">Home</a>
+							<a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
+						</div>
+					</li>
+				</ul>
+				<!-- /Header Menu -->
+				
+				<!-- Mobile Menu -->
+				<div class="dropdown mobile-user-menu">
+					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" href="#"><h4><b>{{request.user.username}}</b></h4></a>
+						<a class="dropdown-item" href="{% url 'update-user'%}">My Profile</a>
+						<a class="dropdown-item" href="{% url 'chatpagehome'%}">Home</a>
+						<a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
+						
+					
+					</div>
+				</div>
+				<!-- /Mobile Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div class="sidebar-menu">
+						<ul>
+							<li> 
+								<a href="{% url 'chatpagehome'%}"><i class="la la-home"></i> <span>Back to Home</span></a>
+							</li>
+
+							<li class="menu-title"> <span>Group   ({{participants.count}}) Members</span> <a href="#" data-toggle="modal" data-target="#add_group"><i class="fa fa-user"></i></a></li>
+                           
+							{% for user in participants %}
+
+							   <li>
+									
+									<a href="{%  url 'user-profile' user.id %}">
+										<span class="chat-avatar-sm user-img">
+											<img class="rounded-circle" alt="x" src="{% static 'moi/img/profile.png'%}"><span class="status online"></span>
+										</span> 
+										<span class="chat-user">{{user.username}}</span>  <span class="badge badge-pill bg-danger">2</span>
+									</a>
+								</li>
+							{% endfor %}
+							
+						</ul>
+					</div>
+                </div>
+            </div>
+			<!-- /Sidebar -->
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+				<!-- Chat Main Row -->
+				<div class="chat-main-row">
+				
+					<!-- Chat Main Wrapper -->
+					<div class="chat-main-wrapper">
+					
+						<!-- Chats View -->
+						<div class="col-lg-9 message-view task-view">
+							<div class="chat-window">
+								<div class="fixed-header">
+									<div class="navbar">
+										<div class="user-details mr-auto">
+											<div class="float-left user-img">
+												<a class="avatar" href="#" title="">
+													<img src="{%static 'moi/img/group.png'%}" alt="" class="rounded-circle">
+													<span class="status online"></span>
+												</a>
+											</div>
+											<div class="user-info float-left">
+												<a href="#" title=""><span>{{room.name}}</span> <i class="typing-text">...</i></a>
+												<span class="last-seen">created {{room.created|timesince}} ago</span>
+											</div>
+										</div>
+										<form  method="GET" action="{% url 'room' room.id%}">
+												<div class="search-box">
+													<div class="input-group input-group-sm">
+														<input type="text" name="q" placeholder="Search for text " class="form-control">
+														<span class="input-group-append">
+															<button type="button" class="btn"><i class="fa fa-search"></i></button>
+														</span>
+													</div>
+												</div>
+									   </form>
+										<ul class="nav custom-menu">
+											<li class="nav-item">
+												<a class="nav-link task-chat profile-rightbar float-right" id="task_chat" href="#task_window"><i class="fa fa-user"></i></a>
+											</li>
+											
+											<li class="nav-item dropdown dropdown-action">
+												<a aria-expanded="false" data-toggle="dropdown" class="nav-link dropdown-toggle" href=""><i class="fa fa-cog"></i></a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a href="javascript:void(0)" class="dropdown-item">Delete Conversations</a>
+													<a href="javascript:void(0)" class="dropdown-item">Settings</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+                                <!-- chat content -->
+                                
+								<div class="chat-contents">
+									<div class="chat-content-wrap">
+										<div class="chat-wrap-inner">
+
+
+
+											<div class="chat-box">
+												<!-- messages -->
+												<div class="chats">
+													
+													
+															{% for message in room_messages %}
+															    {% if request.user == message.user %}
+																
+																	<div class="chat chat-right">
+																		<div class="chat-body">
+																			<div class="chat-bubble">
+																				<div class="chat-content">
+																					
+																					<p>{{ message.body }}</p>
+																					<span class="chat-time">{{ message.created|date:"g:i A" }} </span>
+																				</div>
+																				{% if request.user == message.user %}
+																				<div class="chat-action-btns">
+																					<ul>
+																						
+																						<li><a href="{% url 'delete-message' message.id %}" class="del-msg"><i class="fa fa-trash-o"></i></a></li>
+																					</ul>
+																				</div>
+																				{% endif %}
+																			</div>
+																		</div>
+																	</div>
+
+																	{% else %}
+																
+																	<div class="chat chat-left">
+																		<div class="chat-avatar">
+																			<a href="{% url 'user-profile' message.user.id %}" class="avatar">
+																				<img alt="" src="{% static 'moi/img/profile.png' %}">
+																			</a>
+																		</div>
+																		<div class="chat-body">
+																			<div class="chat-bubble">
+																				<div class="chat-content">
+																					<span class="chatx-time"> ~ {{ message.user.username }}</span>
+																					<p>{{ message.body }}</p>
+																					<span class="chat-time">{{ message.created|date:"g:i A" }} </span>
+																				</div>
+																				{% if request.user == message.user %}
+																				<div class="chat-action-btns">
+																					<ul>
+																						
+																						<li><a href="{% url 'delete-message' message.id %}" class="del-msg"><i class="fa fa-trash-o"></i></a></li>
+																					</ul>
+																				</div>
+																				{% endif %}
+																			</div>
+																		</div>
+																	</div>
+																	{% endif%}
+															
+															{% endfor %}
+													
+													
+												</div>
+												<!--End of messages-->
+											</div>	
+										</div>
+									</div>
+								</div>
+                              
+
+                                <!-- end of message-->
+								<div class="chat-footer">
+									<div class="message-bar">
+										<div class="message-inner">
+											<a class="link attach-icon" href="#" data-toggle="modal" data-target="#drag_files"><img src="{%static 'moi/img/attachment.png'%}" alt=""></a>
+											<div class="message-area">
+												<form action="" method="POST">
+													<div class="input-group">
+														
+															{% csrf_token %}
+															<textarea class="form-control" name="body" placeholder="Type message..." required ></textarea>
+															<span class="input-group-append">
+																<button class="btn btn-custom" type="submit"><i class="fa fa-send"></i></button>
+															</span>
+													
+													</div>
+											 </form>   
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /Chats View -->
+						
+						<!-- Chat Right Sidebar -->
+						<div class="col-lg-3 message-view chat-profile-view chat-sidebar" id="task_window">
+							<div class="chat-window video-window">
+								<div class="fixed-header">
+									<ul class="nav nav-tabs nav-tabs-bottom">
+										<li class="nav-item"><a class="nav-link" href="#calls_tab" data-toggle="tab">{{participants.count}}~Members</a></li>
+										<li class="nav-item"><a class="nav-link active" href="#profile_tab" data-toggle="tab">Profile</a></li>
+									</ul>
+								</div>
+								<div class="tab-content chat-contents">
+									<div class="content-full tab-pane" id="calls_tab">
+										<div class="chat-wrap-inner">
+											<div class="chat-box">
+												<div class="chats">
+													{% for user in participants %}
+													<div class="chat chat-left">
+														<div class="chat-avatar">
+															<a href="{%  url 'user-profile' user.id %}" class="avatar">
+																<img alt="" src="{%static 'moi/img/profile.png'%}">
+															</a>
+														</div>
+														<div class="chat-body">
+															<div class="chat-bubble">
+																<div class="chat-content">
+																	<span class="task-chat-user">{{ user.username}}~ </span> <span class="chat-time">{{ user.last_login|timesince }}ago</span>
+																	<div class="call-details">
+																		<i class="material-icons">phone</i>
+																		<div class="call-info">
+																			<div class="call-user-details">
+																				<span class="call-description">{{user.email}}</span>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													{% endfor %}
+													
+													<div class="chat-line">
+														<span class="chat-date">August 29th, 2024</span>
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="content-full tab-pane show active" id="profile_tab">
+										<div class="display-table">
+											<div class="table-row">
+												<div class="table-body">
+													<div class="table-content">
+														<div class="chat-profile-img">
+															<div class="edit-profile-img">
+																<img src="{%static 'moi/img/profile.png'%}" alt="">
+																<span class="change-img"><a  href="{% url 'user-profile' room.host.id %}">View Profile</a></span>
+															</div>
+
+															<small class="text-muted">Created By </small>
+															<h3  class="user-name m-t-10 mb-0"><a  href="{% url 'user-profile' room.host.id %}">{{room.host.username}}</a></h3>
+
+															
+															
+															{% if room.host == request.user %}
+															<a href="{% url 'update-room' room.id %}" class="btn btn-primary edit-btn"><i class="fa fa-pencil"></i></a>
+															{% endif %}
+
+															{% if room.host == request.user %}
+															<a href="{% url 'delete-room' room.id %}" class="btn btn-primary delete-btn"><i class="fa fa-trash-o"></i></a>
+															{% endif %}
+
+															
+														</div>
+														<div class="chat-profile-info">
+															<ul class="user-det-list">
+																<li>
+																	<span>Username:</span>
+																	<span class="float-right text-muted">{{room.host.username}}</span>
+																</li>
+																<li>
+																	<span>First name:</span>
+																	<span class="float-right text-muted">{{room.host.first_name}}</span>
+																</li>
+																<li>
+																	<span>Last name:</span>
+																	<span class="float-right text-muted">{{room.host.last_name}}</span>
+																</li>
+																<li>
+																	<span>Email:</span>
+																	<span class="float-right text-muted">{{room.host.email}}</span>
+																</li>
+																<li>
+																	<span>Phone:</span>
+																	<span class="float-right text-muted">xxxx</span>
+																</li>
+																<li>
+																	<span>Theme:</span>
+																	<span class="float-right text-muted">{{room.topic}}</span>
+																</li>
+															</ul>
+														</div>
+														<div class="transfer-files">
+															<ul class="nav nav-tabs nav-tabs-solid nav-justified mb-0">
+																<li class="nav-item"><a class="nav-link active" href="#all_files" data-toggle="tab">Add User</a></li>
+																<li class="nav-item"><a class="nav-link" href="#my_files" data-toggle="tab">Search</a></li>
+															</ul>
+															<div class="tab-content">
+																<div class="tab-pane show active" id="all_files">
+																	<ul class="files-list">
+																		<li>
+																			<div class="files-cont">
+																				<div class="file-type">
+																					<span class="files-icon"><i class="fa fa-file-pdf-o"></i></span>
+																				</div>
+																				<div class="files-info">
+																					<span class="file-name text-ellipsis">AHA Selfcare Mobile Application Test-Cases.xls</span>
+																					<span class="file-author"><a href="#">whatsapp</a></span> <span class="file-date">May 31st at 6:53 PM</span>
+																				</div>
+																				<ul class="files-action">
+																					<li class="dropdown dropdown-action">
+																						<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">twitter</i></a>
+																						<div class="dropdown-menu">
+																							<a class="dropdown-item" href="javascript:void(0)">Download</a>
+																							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#share_files">Share</a>
+																						</div>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+																<div class="tab-pane" id="my_files">
+																	<ul class="files-list">
+																		<li>
+																			<div class="files-cont">
+																				<div class="file-type">
+																					<span class="files-icon"><i class="fa fa-file-pdf-o"></i></span>
+																				</div>
+																				<div class="files-info">
+																					<span class="file-name text-ellipsis">AHA Selfcare Mobile Application Test-Cases.xls</span>
+																					<span class="file-author"><a href="#">Facebook</a></span> <span class="file-date">May 31st at 6:53 PM</span>
+																				</div>
+																				<ul class="files-action">
+																					<li class="dropdown dropdown-action">
+																						<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></a>
+																						<div class="dropdown-menu">
+																							<a class="dropdown-item" href="javascript:void(0)">Download</a>
+																							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#share_files">Share</a>
+																						</div>
+																					</li>
+																				</ul>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!-- /Chat Right Sidebar -->
+						
+					</div>
+					<!-- /Chat Main Wrapper -->
+					
+				</div>
+				<!-- /Chat Main Row -->
+				
+				
+				<!-- /Add Group Modal -->
+				
+				<!-- Add Chat User Modal -->
+				
+				<!-- /Add Chat User Modal -->
+				
+				<!-- Share Files Modal -->
+				
+				
+            </div>
+			<!-- /Page Wrapper -->
+			
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+        <script src="{%static 'moi/js/jquery-3.5.1.min.js'%}"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="{%static 'moi/js/popper.min.js'%}"></script>
+        <script src="{%static 'moi/js/bootstrap.min.js'%}"></script>
+		
+		<!-- Slimscroll JS -->
+		<script src="{%static 'moi/js/jquery.slimscroll.min.js'%}"></script>
+		
+		<!-- Dropfiles JS -->
+		<script src="{%static 'moi/js/dropfiles.js'%}"></script>
+		
+		<!-- Custom JS -->
+		<script src="{%static 'moi/js/app.js'%}"></script>
+		<script src="{% static 'chatapp/js/script.js'%}"></script>
+		
+    </body>
+
+</html>

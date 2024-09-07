@@ -1,0 +1,28 @@
+{% load static %} 
+
+{% for message in room_messages %}
+<li class="notification-message">
+  <a href="{% url 'room' message.room.id %}">
+    <div class="media">
+      <span class="avatar">
+        <img alt="" src="{%static 'moi/img/profile.png'%}" />
+      </span>
+      <div class="media-body">
+        <p class="noti-details">
+          <span class="noti-title">~ {{message.user.username}}</span> Reply to
+          <span class="noti-title"
+            ><a href="{% url 'room' message.room.id %}">{{message.room}}</a>
+            "{{message.body}}"</span
+          >
+        </p>
+        <p class="noti-time">
+          <span class="notification-time"
+            >{{message.created|timesince}} ago</span
+          >
+        </p>
+      </div>
+    </div>
+  </a>
+</li>
+
+{% endfor %}

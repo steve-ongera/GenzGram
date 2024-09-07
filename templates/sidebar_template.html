@@ -1,0 +1,333 @@
+{% load static %}
+
+{% if request.user.is_authenticated %}
+                {% with profile=request.user.profile %}
+                                    {% if profile.user_type == 'admin' %}
+<!-- ======= Sidebar ======= -->
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title"> 
+                    <span>Main</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a  href="{% url 'admin_panel'%}">Admin Dashboard</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="submenu">
+								<a href="{% url 'academic_years'%}"><i class="la la-cube"></i> <span> Academic Year</span><span class="menu-arrow"> </span></a>
+								<ul style="display: none;">
+									<li><a  href="{% url 'academic_years'%}">Years</a></li>
+									
+								</ul>
+				</li>
+                
+                <li class="submenu">
+                    <a href="#" class="noti-dot"><i class="la la-group"></i> <span>Manage</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{% url 'maange_students'%}">Students</a></li>
+                        
+                        <li><a href="{% url 'maange_teachers'%}">Teachers <span class="badge badge-pill bg-primary float-right">1</span></a></li>
+                       
+                        
+                        <li><a href="{% url 'manage_streams'%}">Streams</a></li>
+                        
+                        <li><a href="#">Departments</a></li>
+                        
+                    </ul>
+                </li>
+                <li> 
+                    <a href="#"><i class="la la-users"></i> <span>View Attendance</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-rocket"></i> <span>  Leave</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Students</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li><a href="#">Non-Staff</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a href="{% url 'search_for_student'%}"><i class="la la-search"></i> <span>Search Student</span></a>
+                </li>
+                <li> 
+                    <a href="{% url 'academic_year_add'%}"><i class="la la-ticket"></i> <span>Add Acdemic year</span></a>
+                </li>
+                <li> 
+                    <a href="{% url 'add_userdatabase'%}"><i class="la la-user"></i> <span>School Database</span></a>
+                </li>
+                <li> 
+                    <a href="{% url 'add_student'%}"><i class="la la-mortar-board"></i> <span>Student Database</span></a>
+                </li>
+                <li class="menu-title"> 
+                    <span>School</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-files-o"></i> <span> Library</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Add Book</a></li>
+                        <li><a href="#">Delete Book</a></li>
+                        <li><a href="#">Update</a></li>
+                    
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-bank"></i> <span> Accounting </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">School Fees</a></li>
+                        <li><a href="#">Tution Fees</a></li>
+                        <li><a href="#">Pocket Money</a></li>
+                
+                    </ul>
+                </li>
+            
+                
+
+                <li class="menu-title"> 
+                    <span>Administration</span>
+                </li>
+                
+            
+            
+                <li class="submenu">
+                    <a href="#"><i class="la la-user"></i> <span> Profile </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#"> Student Profile </a></li>
+                        <li><a href="#"> Staff Profile </a></li>
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="submenu">
+                    <a href="#"><i class="la la-object-group"></i> <span>Perfomance</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Staff </a></li>
+                        <li><a href="#">Non Staff </a></li>
+                        
+                    </ul>
+                </li>
+                
+        </div>
+    </div>
+</div>
+<!-- /Sidebar -->
+{% elif profile.user_type == 'student' %}
+
+<!-- ======= Sidebar ======= -->
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title"> 
+                    <span>Main</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a  href="{% url 'student_panel'%}">Student Dashboard</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li> 
+                    <a href="{% url 'student_results'%}"><i class="la la-users"></i> <span>View Result</span></a>
+                </li>
+                
+                <li> 
+                    <a href="#"><i class="la la-users"></i> <span>Students Attendance</span></a>
+                </li>
+
+                <li class="submenu">
+                    <a href="#"><i class="la la-rocket"></i> <span> Apply Leave</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Students</a></li>
+                 
+                    </ul>
+                </li>
+                <li> 
+                    <a href="#"><i class="la la-user-secret"></i> <span>Students Feedback</span></a>
+                </li>
+              
+                <li class="menu-title"> 
+                    <span>School</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-files-o"></i> <span> Library</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Borrow Book</a></li>
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">File Case</a></li>
+                    
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-files-o"></i> <span> Accounting </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">School Fees</a></li>
+                      
+                
+                    </ul>
+                </li>
+            
+                
+
+                <li class="menu-title"> 
+                    <span>Administration</span>
+                </li>
+                
+            
+            
+                <li class="submenu">
+                    <a href="#"><i class="la la-user"></i> <span> Profile </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#"> Student Profile </a></li>
+                     
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="submenu">
+                    <a href="#"><i class="la la-object-group"></i> <span> Notify </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Student </a></li>
+                      
+                        
+                    </ul>
+                </li>
+                
+        </div>
+    </div>
+</div>
+
+
+{% elif profile.user_type == 'class_teacher' %}
+
+
+<!-- ======= Sidebar ======= -->
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+            <ul>
+                <li class="menu-title"> 
+                    <span>Main</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a  href="{% url 'teacher_dashboard'%}">Class Tr Dashboard</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="submenu">
+								<a href="#"><i class="la la-cube"></i> <span> Academic Year</span><span class="menu-arrow"> </span></a>
+								<ul style="display: none;">
+									<li><a  href="#">Years</a></li>
+									
+								</ul>
+				</li>
+                
+                <li class="submenu">
+                    <a href="#" class="noti-dot"><i class="la la-user"></i> <span>Manage</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Students</a></li>
+                        
+                        <li><a href="#">Teachers <span class="badge badge-pill bg-primary float-right">1</span></a></li>
+                       
+                        
+                        <li><a href="#">Streams</a></li>
+                        
+                        <li><a href="#">Departments</a></li>
+                        
+                    </ul>
+                </li>
+                <li> 
+                    <a href="#"><i class="la la-users"></i> <span>View Attendance</span></a>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-rocket"></i> <span>  Leave</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">Students</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li><a href="#">Non-Staff</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a href="#"><i class="la la-user-secret"></i> <span>Students Feedback</span></a>
+                </li>
+                <li> 
+                    <a href="#"><i class="la la-ticket"></i> <span>Staff Feedback</span></a>
+                </li>
+                <li class="menu-title"> 
+                    <span>School</span>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-files-o"></i> <span> Library</span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">A</a></li>
+                        <li><a href="#">B</a></li>
+                        <li><a href="#">C</a></li>
+                    
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#"><i class="la la-files-o"></i> <span> Accounting </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#">School Fees</a></li>
+                        <li><a href="#">Tution Fees</a></li>
+                        <li><a href="#">Pocket Money</a></li>
+                
+                    </ul>
+                </li>
+            
+                
+
+                <li class="menu-title"> 
+                    <span>Administration</span>
+                </li>
+                
+            
+            
+                <li class="submenu">
+                    <a href="#"><i class="la la-user"></i> <span> Profile </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="#"> Student Profile </a></li>
+                        <li><a href="#"> Staff Profile </a></li>
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="submenu">
+                    <a href="#"><i class="la la-object-group"></i> <span> Perfomance </span> <span class="menu-arrow"></span></a>
+                    <ul style="display: none;">
+                        <li><a href="{% url 'enter_marks'%}">Class performance</a></li>
+                        <li><a href="#">Staff </a></li>
+                        <li><a href="#">Non Staff </a></li>
+                        
+                    </ul>
+                </li>
+                
+        </div>
+    </div>
+</div>
+
+
+                                        
+{% endif %}
+{% endwith %}
+{% endif %}
+
